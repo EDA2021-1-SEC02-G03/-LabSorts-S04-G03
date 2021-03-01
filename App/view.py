@@ -38,7 +38,7 @@ operación solicitada
 def printMenu():
     print("Bienvenido")
     print("1- Cargar información en el catálogo")
-    print("2- Consultar los Top x libros por promedio")
+    print("2- Ordenamiento de sublista de X elementos:")
     print("3- Consultar los libros de un autor")
     print("4- Libros por género")
     print("5 - Ordenar los libros por rating")
@@ -107,7 +107,10 @@ while True:
         print('Géneros cargados: ' + str(lt.size(catalog['tags'])))
         print('Asociación de Géneros a Libros cargados: ' +
               str(lt.size(catalog['book_tags'])))
+        if int(inputs[0]) == 2:
 
+            tamaño_sbl=int(input("Porfavor ingrese el tamaño de la sublista:\n"))
+            sublista=lt.subList(catalog, 0, tamaño_sbl)
     elif int(inputs[0]) == 2:
         number = input("Buscando los TOP ?: ")
         books = controller.getBestBooks(catalog, int(number))
